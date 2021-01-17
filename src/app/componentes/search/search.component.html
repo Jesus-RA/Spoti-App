@@ -1,0 +1,21 @@
+<div class="row mb-5">
+
+    <!-- Search input -->
+    <div class="col-md-6 mx-auto">
+        <input
+            #artist
+            type="text"
+            (keyup)="search(artist.value)"
+            class="form-control text-white border-0"
+            placeholder="Search artist"
+            style="background-color: var(--dark-color);"
+        >
+    </div>
+
+</div>
+
+<app-loading *ngIf="loading;else results"></app-loading>
+
+<ng-template #results>
+    <app-card [items]="artists"></app-card>
+</ng-template>

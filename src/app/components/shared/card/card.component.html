@@ -1,0 +1,29 @@
+<div class="row justify-content-center animated fadeIn">
+    <div
+        class="col-md-3 mb-4"
+        *ngFor="let item of items"
+        (click)="seeArtist(item)"
+        role="button"
+        style="overflow: hidden; max-height: 400px; max-width: 250px; "
+    >
+
+        <div
+            class="card border-0 text-white"
+            style="background-color: var(--dark-color);"
+        >
+            <img [src]="item.images | noimage" class="card-img-top" [alt]="item.name" style="max-height: 300px; object-fit: fill;">
+            <div class="card-body">
+                <h5 class="card-title text-center text-white">{{ item.name }}</h5>
+                <p class="card-text">
+                    <span
+                        class="badge badge-dark"
+                        *ngFor="let artist of item.artists"    
+                    >
+                        {{ artist.name }}
+                    </span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
