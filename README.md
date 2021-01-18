@@ -10,7 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## New Releases Page
 
-![New Releases Page](https://jesus-ra.github.io/Spoti-App/assets/img/new%20releases.jpg "New Releases Page")
+![New Releases Page](https://jesus-ra.github.io/Spoti-App/assets/img/new-releases.jpg "New Releases Page")
 
 ## Search Page
 
