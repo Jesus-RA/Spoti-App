@@ -1,6 +1,6 @@
 # Spotiapp
 
-This project was developed following [Fernando Herrera Angular Course](#)
+This project was developed following [Fernando Herrera Angular Course](https://www.udemy.com/course/angular-2-fernando-herrera/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
 
