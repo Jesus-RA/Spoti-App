@@ -1,8 +1,24 @@
 # Spotiapp
 
+This project was developed following [Fernando Herrera Angular Course](https://www.udemy.com/course/angular-2-fernando-herrera/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
 
-![About Page](https://jesus-ra.github.io/Spoti-App/assets/img/no-image.png "About Page")
+## About Page
+
+![About Page](https://jesus-ra.github.io/Spoti-App/assets/img/about.jpg "About Page")
+
+## New Releases Page
+
+![New Releases Page](https://jesus-ra.github.io/Spoti-App/assets/img/new%20releases.jpg "New Releases Page")
+
+## Search Page
+
+![Search Page](https://jesus-ra.github.io/Spoti-App/assets/img/search.jpg "Search Page")
+
+## Artist Page
+![Artist Page](https://jesus-ra.github.io/Spoti-App/assets/img/artist.jpg "Artist Page")
+
 
 ## Development server
 
