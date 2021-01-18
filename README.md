@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
 
-![About Page](https://drive.google.com/file/d/1Lm30OGW5rLnGTxmnZOur9xD8vVlB3jAa/view?usp=sharing "About Page")
+![About Page](https://jesus-ra.github.io/Spoti-App/assets/img/no-image.png "About Page")
 
 ## Development server
 
