@@ -8,43 +8,31 @@ import { SpotifystoreService } from './spotifystore.service';
 })
 export class SpotifyService {
 
-  private token : string
-
   constructor( private http : HttpClient, private spotifyStore : SpotifystoreService ) { 
-    
-    this.getToken()
-      .subscribe(data => {
-        this.token = data['access_token']
-        this.spotifyStore.addToken(this.token)
-      })
 
-    // this.spotifyStore.spotify$.subscribe(data => {
+    this.spotifyStore.spotify$.subscribe(data => {
+      console.log(data)
+    })
 
-    //   this.token = data
-
-    //   this.token = this.spotifyStore.getToken()
-    //   console.log("Service data:", this.spotifyStore.getToken())
-
-    //   if(this.token === ''){
-    //     console.log('entré')
-    //     // this.spotifyStore.addToken(this.token)
-    //   }
-    // })
   }
 
   getQuery( query : string ){
 
+    let token = this.spotifyStore.getToken();
+    console.log("token: ", token)
+
     const url = `https://api.spotify.com/v1/${ query }`
     
     const headers = new HttpHeaders({
-      'Authorization' : `Bearer ${this.token}` ,
+      // 'Authorization' : `Bearer ${this.token}` ,
+      'Authorization' : `Bearer ${token}` ,
     });
 
     return this.http.get( url , { headers } );
 
   }
 
-  getToken() {
+  getToken(){
 
     let body = new HttpParams()
       .set('grant_type', 'client_credentials')
@@ -56,7 +44,11 @@ export class SpotifyService {
 
     // Pedir token
     return this.http.post("https://accounts.spotify.com/api/token", body, { headers } )
-      
+      .subscribe(data => {
+        console.log(data)
+        this.spotifyStore.addToken(data['access_token'])
+      })
+
   }
 
   getNewReleases(){

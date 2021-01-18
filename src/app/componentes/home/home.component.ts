@@ -18,14 +18,44 @@ export class HomeComponent implements OnInit {
     private spotifyService : SpotifyService,
     private spotifyStore : SpotifystoreService
   ) {
+    // this.spotifyService.getToken()
+    // this.loading = true
+    // this.error = false
 
+    // this.spotifyService.getNewReleases()
+
+    //   .subscribe( ( data : any) => {
+
+    //     this.new_releases = data
+    //     this.loading = false
+
+    //   }, (serviceError) => {
+
+    //     this.loading = false
+    //     this.error = true
+    //     this.error_message = serviceError.error.error.message
+        
+    //     if(this.error_message === 'Invalid access token'){
+          
+    //       // this.spotifyService.getToken()
+    //       this.error = false
+          
+    //     }
+        
+    //   })
+  }
+
+  ngOnInit(): void {
     this.loading = true
     this.error = false
 
     this.spotifyService.getNewReleases()
+
       .subscribe( ( data : any) => {
+
         this.new_releases = data
         this.loading = false
+        
       }, (serviceError) => {
 
         this.loading = false
@@ -42,7 +72,29 @@ export class HomeComponent implements OnInit {
       })
   }
 
-  ngOnInit(): void {
+  async getNewReleases(){
+    console.log('entré')
+    await this.spotifyService.getToken();
+    console.log(this.spotifyStore.getToken())
+    console.log('pasé')
+    this.spotifyService.getNewReleases()
+    .subscribe( ( data : any) => {
+      this.new_releases = data
+      this.loading = false
+    }, (serviceError) => {
+
+      this.loading = false
+      this.error = true
+      this.error_message = serviceError.error.error.message
+      
+      if(this.error_message === 'Invalid access token'){
+        
+        // this.spotifyService.getToken()
+        this.error = false
+        
+      }
+      
+    })
   }
 
 }
