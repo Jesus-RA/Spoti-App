@@ -23,4 +23,6 @@ ___
 ## Artist Page
 ![Artist Page](https://jesus-ra.github.io/Spoti-App/assets/img/artist.jpg "Artist Page")
 
+___
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
